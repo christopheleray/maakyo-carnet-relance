@@ -1,1 +1,22 @@
 @import "~bootstrap/scss/bootstrap";
+
+.container {
+    width: auto;
+    max-width: 680px;
+    padding: 0 15px;
+  }
+  
+  .footer {
+    background-color: #ff5570;
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .text-conditions-generales {
+      font-size: 0.7em;
+  }
+
+  .p {
+    text-align: justify;
+    text-justify: inter-word;
+  }
