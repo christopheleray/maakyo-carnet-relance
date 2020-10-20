@@ -1,38 +1,36 @@
 <p id="notice"><%= notice %></p>
 
-<div class="container">
-  <h1 class="text-center">Liste des clients</h1>
+<div class="container main-container">    
+    <h1 class="display-6 py-2 text-center">Liste cahier de rappel - COVID19</h1>
+    <div class="container">
+      <table class="table table-striped table-bordered table-reponsive">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Etablissement</th>
+            <th scope="col">Prénom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Téléphone</th>
+            <th scope="col">Date</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
 
-<div class="row">
-  <table class="table table-striped table-bordered">
-    <thead class="thead-dark">
-      <tr>
-        <th scope="col">Etablissement</th>
-        <th scope="col">Prénom</th>
-        <th scope="col">Nom</th>
-        <th scope="col">Téléphone</th>
-        <th scope="col">Date</th>
-        <th colspan="3"></th>
-      </tr>
-    </thead>
-
-    <tbody>
-      <% @customers.each do |customer| %>
-        <tr>
-          <td><%= customer.location.name %></td>
-          <td><%= customer.first_name%></td>
-          <td><%= customer.last_name%></td>
-          <td><%= customer.phone%></td>
-          <td><%= customer.created_at%></td>
-          <td><%= link_to 'Modifier', edit_location_customer_path(@location, customer), :class => "btn btn-info" %></td>
-          <td><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-
-  <br>
-  <div>
-  <%= link_to 'Nouveau client', new_location_customer_path(@location), :class => "btn btn-primary" %>
+        <tbody>
+          <% @customers.each do |customer| %>
+            <tr>
+              <td scope="row"><%= customer.location.name %></td>
+              <td scope="row"><%= customer.first_name%></td>
+              <td scope="row"><%= customer.last_name%></td>
+              <td scope="row"><%= customer.phone%></td>
+              <td scope="row"><%= customer.created_at%></td>
+              <td scope="row"><%= link_to 'Modifier', edit_location_customer_path(@location, customer), :class => "btn btn-info" %></td>
+              <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  <div class="container text-center">
+    <%= link_to 'Nouveau client', new_location_customer_path(@location), :class => "btn btn-primary" %>
   </div>
 </div>
