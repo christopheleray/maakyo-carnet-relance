@@ -11,20 +11,21 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_area :first_name %>
-  </div>
-    <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_area :last_name %>
-  </div>
-    <div class="field">
-    <%= form.label :phone %>
-    <%= form.text_area :phone %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit "Enregistrer" %>
-  </div>
+  <div class="container justify-content-center">
+      <div class="field form-group">
+        <h5><%= form.label :Prénom %></h5>
+        <p><%= form.text_area :first_name %></p>
+      </div>
+        <div class="field form-group">
+        <h5><%= form.label :Nom %></h5>
+        <p><%= form.text_area :last_name %></p>
+      </div>
+        <div class="field form-group">
+        <h5><%= form.label :Téléphone %></h5>
+        <p><%= form.text_area :phone %></p>
+      </div>
+      <div class="actions">
+        <%= form.submit "Enregistrer", :class => "btn btn-primary" %>
+      </div>
+    </div>
 <% end %>
