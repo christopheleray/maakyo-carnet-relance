@@ -1,19 +1,20 @@
-<div class="col-xl-9 col-lg-8 col-md-8 col-sm-10 mx-auto form p-4">
-    <h1 class="display-4 py-2 text-center">Cahier de rappel - COVID19</h1>
-    <div class="container">
-    <p>COVID-19 : vos coordonnées pour faciliter la recherche des « cas contacts »</p>
-    <p>Notre établissement est soumis au respect d’un protocole sanitaire spécifique, qui prévoit le recueil d’informations vous concernant, dans le cadre de la lutte contre l’épidémie de COVID-19.</p>
-    </div>
-    <%= render 'form', customer: @customer %>
+<div class="container main-container">    
+    <div class="col-xl-9 col-lg-8 col-md-8 col-sm-10 mx-auto form p-4">
+        <h1 class="display-6 py-2 text-center">Cahier de rappel - COVID19</h1>
+        <div class="container">
+        <p>COVID-19 : vos coordonnées pour faciliter la recherche des « cas contacts »</p>
+        <p>Notre établissement est soumis au respect d’un protocole sanitaire spécifique, qui prévoit le recueil d’informations vous concernant, dans le cadre de la lutte contre l’épidémie de COVID-19.</p>
+        </div>
+        <%= render 'form', customer: @customer %>
 
-    <%= link_to 'Retour', location_customers_path(@location) %>
-    <div class="container text-conditions-generales">
-        <p>Les informations recueillies sur ce formulaire sont enregistrées et utilisées uniquement par notre établissement : <%= @location.name %> <%= @location.address1 %>  <%= @location.postal_code %> <%= @location.city %> <%= @location.country %>.</p>
-<p>Conformément aux obligations prévues dans le protocole sanitaire défini par arrêté préfectoral, vos données seront uniquement utilisées pour faciliter la recherche des « cas contacts » par les autorités sanitaires, et ne seront pas réutilisées à d’autres fins.
-En cas de contamination de l’un des clients au moment de votre présence, ces informations pourront être communiquées aux autorités sanitaires compétentes (agents des CPAM, de l’assurance maladie et/ou de l’agence régionale de santé), afin de vous contacter et de vous indiquer le protocole sanitaire à suivre. 
-Vos données seront conservées pendant 14 jours à compter de leur collecte, et seront supprimées à l’issue de ce délai.
-Vous pouvez accéder aux données vous concernant, les rectifier ou exercer votre droit à la limitation du traitement de vos données. 
-Pour exercer ces droits ou pour toute question sur le traitement de vos données, vous pouvez contacter <%= @location.phone %> ou par courrier postales.</p>
-<p>Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL.</p>
+        <div class="container text-conditions-generales">
+            <p>Les informations recueillies sur ce formulaire sont enregistrées et utilisées uniquement par notre établissement : <%= @location.name %> <%= @location.address1 %>  <%= @location.postal_code %> <%= @location.city %> <%= @location.country %>.</p>
+            <p>Conformément aux obligations prévues dans le protocole sanitaire défini par arrêté préfectoral, vos données seront uniquement utilisées pour faciliter la recherche des « cas contacts » par les autorités sanitaires, et ne seront pas réutilisées à d’autres fins.
+            En cas de contamination de l’un des clients au moment de votre présence, ces informations pourront être communiquées aux autorités sanitaires compétentes (agents des CPAM, de l’assurance maladie et/ou de l’agence régionale de santé), afin de vous contacter et de vous indiquer le protocole sanitaire à suivre. 
+            Vos données seront conservées pendant 14 jours à compter de leur collecte, et seront supprimées à l’issue de ce délai.
+            Vous pouvez accéder aux données vous concernant, les rectifier ou exercer votre droit à la limitation du traitement de vos données. 
+            Pour exercer ces droits ou pour toute question sur le traitement de vos données, vous pouvez contacter <%= @location.phone %> ou par courrier postales.</p>
+            <p>Si vous estimez, après nous avoir contactés, que vos droits Informatique et Libertés ne sont pas respectés, vous pouvez adresser une réclamation à la CNIL.</p>
+        </div>
     </div>
-</div>
+</div>    

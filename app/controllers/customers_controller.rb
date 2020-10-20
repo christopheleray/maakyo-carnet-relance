@@ -18,7 +18,7 @@ class CustomersController < ApplicationController
     def create
         @customer = @location.customers.build(customers_params)
         if @customer.save
-            redirect_to location_customers_path(@location), notice: 'Customer was succcessfully created'
+            redirect_to static_pages_thankyou_path, notice: 'Customer was succcessfully created'
         else
             render :new
         end
