@@ -1,4 +1,19 @@
 <p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Facts:</strong>
+  <%= @locations.name %>
+</p>
+
+<h2>Clients</h2>
+<% for customer in @location.customers %>
+    <ul>
+      <li><%= customer.first_name %></li>
+      <li><%= customer.last_name %></li>
+      <li><%= customer.phone %></li>
+      <li><%= customer.created_at %></li>
+  </ul>
+<% end %>
 <%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Créer une nouvelle entrée', location_customer_path(@location) %> |
 <%= link_to 'Back', customers_path %>
