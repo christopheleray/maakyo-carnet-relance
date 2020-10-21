@@ -1,22 +1,36 @@
 <%= form_with(model: location, local: true) do |form| %>
-  <% if location.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(location.errors.count, "error") %> prohibited this location from being saved:</h2>
-
-      <ul>
-        <% location.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="container justify-content-center text-center">
+    <div class="field form-group">
+      <h5><%= form.label :Nom %> *</h5>
+      <p><%= form.text_field :name %></p>
     </div>
-  <% end %>
+    <div class="field form-group">
+      <h5><%= form.label :Adresse %> *</h5>
+      <p><%= form.text_field :address1 %></p>
+    </div>
+    <div class="field form-group">
+      <h5><%= form.label :Adresse %> *</h5>
+      <p><%= form.text_field :address2 %></p>
+    </div>
+    <div class="field form-group">
+      <h5><%= form.label :CodePostal %> *</h5>
+      <p><%= form.text_field :postal_code %></p>
+    </div>
+    <div class="field form-group">
+      <h5><%= form.label :Ville %> *</h5>
+      <p><%= form.text_field :City %></p>
+    </div>
+    <div class="field form-group">
+      <h5><%= form.label :Pays %> *</h5>
+      <p><%= form.text_field :country %></p>
+    </div>  
+        <div class="field form-group">
+      <h5><%= form.label :Téléphone %> *</h5>
+      <p><%= form.text_field :phone %></p>
+    </div>                  
 
- <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+    <div class="actions">
+      <%= form.submit "Enregistrer", class: "btn btn-primary" %>
+    </div>
+  </div>  
 <% end %>
