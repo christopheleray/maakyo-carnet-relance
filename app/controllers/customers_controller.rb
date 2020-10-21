@@ -1,6 +1,7 @@
 class CustomersController < ApplicationController
     before_action :get_location
     before_action :set_customer, only: %i[show edit update destroy]
+    before_action :authenticate_user!, except: [:new, :create]
 
 
     def index
