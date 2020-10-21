@@ -7,13 +7,15 @@
   
 .footer {
     background-color: #ff5570;
-    color: #ffffff;
     text-align: center;
     position: fixed;
     bottom: 0;
     width: 100%;
     height: 50px;
     line-height: 60px;
+}
+.footer-text {
+    color: #ffffff;
 }
 
 .text-conditions-generales {

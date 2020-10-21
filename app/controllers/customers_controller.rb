@@ -18,15 +18,16 @@ class CustomersController < ApplicationController
     def create
         @customer = @location.customers.build(customers_params)
         if @customer.save
-            redirect_to static_pages_thankyou_path, notice: 'Customer was succcessfully created'
+            redirect_to static_pages_thankyou_path, notice: 'Client a été créé avec succés'
         else
+            flash.now[:alert] = "Merci de vérifier votre saisie, les champs sont obligatoires"
             render :new
         end
     end
 
     def update
         if @customer.update(customers_params)
-            redirect_to location_customers_path(@location), notice: 'Customer was successfully updated.'
+            redirect_to location_customers_path(@location), notice: 'Le client a été mise à jour.'
           else
             render :edit
           end
@@ -34,7 +35,7 @@ class CustomersController < ApplicationController
 
     def destroy
         @customer.destroy
-        redirect_to location_customers_path(@location), notice: 'Customer was susccesfully deleted'
+        redirect_to location_customers_path(@location), notice: 'Le client a été supprimé de la base de donnée"'
     end
 
     private
