@@ -1,7 +1,21 @@
-<nav class="navbar navbar-light bg-light">
-  <div class="container">
-    <span class="navbar-text">
-      CARNET DE RAPPEL
-    </span>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Carnet de rappel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <% if user_signed_in? %>
+        <li><%= link_to "Modifier le profile", edit_user_registration_path %></li>
+        <li><%= link_to "Se déconnecter", destroy_user_session_path, method: :delete %></li>
+        <% else %>
+        <li><%= link_to "Créer un compte", new_user_registration_path %></li>
+        <li><%= link_to "Se connecter", new_user_session_path %></li>
+        <% end%>
+      </ul>
+    </li>
+  </ul>
   </div>
 </nav>
