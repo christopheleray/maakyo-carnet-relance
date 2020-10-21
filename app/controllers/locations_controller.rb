@@ -21,6 +21,7 @@ class LocationsController < ApplicationController
     
     def create
         @location = Location.new(locations_params)
+        @location.user_id = current_user.id
         if @location.save
             redirect_to @location, notice: 'Location was succcessfully created'
         else
