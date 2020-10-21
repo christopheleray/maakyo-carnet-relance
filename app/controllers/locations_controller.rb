@@ -23,7 +23,7 @@ class LocationsController < ApplicationController
         @location = Location.new(locations_params)
         @location.user_id = current_user.id
         if @location.save
-            redirect_to @location, notice: 'Location was succcessfully created'
+            redirect_to locations_url, notice: 'Etablissement créér avec succès'
         else
             render :new
         end
@@ -31,7 +31,7 @@ class LocationsController < ApplicationController
 
     def update
         if @location.update(locations_params)
-            redirect_to @location, notice: 'Location was successfully updated.'
+            redirect_to locations_url, notice: 'Mise à jour éffectuée.'
           else
             render :edit
           end
@@ -39,7 +39,7 @@ class LocationsController < ApplicationController
 
     def destroy
         @location.destroy
-        redirect_to locations_url, notice: 'Location was susccesfully deleted'
+        redirect_to locations_url, notice: 'Établissement supprimé'
     end
 
     private

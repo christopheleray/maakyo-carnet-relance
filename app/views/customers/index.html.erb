@@ -24,7 +24,7 @@
               <td scope="row"><%= customer.phone%></td>
               <td scope="row"><%= customer.created_at%></td>
               <td scope="row"><%= link_to 'Modifier', edit_location_customer_path(@location, customer), :class => "btn btn-info" %></td>
-              <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Are you sure?' }, :class => "btn btn-danger" %></td>
+              <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-danger" %></td>
             </tr>
           <% end %>
         </tbody>

@@ -1,6 +1,8 @@
-<h1>Editing Customer</h1>
+<div class="container main-containert">
+    <h1>Editing Customer</h1>
 
-<%= render 'form', customer: @customer %>
+    <%= render 'form', customer: @customer %>
 
-<%= link_to 'Voir', [@location, @customer] %> |
-<%= link_to 'Retour', location_customers_path(@location) %>
+    <%= link_to 'Voir', [@location, @customer] %> |
+    <%= link_to 'Retour', location_customers_path(@location) %>
+</div>
