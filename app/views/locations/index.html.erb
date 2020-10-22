@@ -2,7 +2,7 @@
 <div class = "container main-container">
   <h1 class="display-6 py-2 text-center">Liste de vos établissements</h1>
   <div class="container">
-    <table class="table table-striped table-bordered table-reponsive">
+    <table class="table table-sm table-light table-hover table-bordered table-reponsive">
       <thead class="thead-dark">
         <tr>
             <th scope="col">Nom</th>
@@ -22,9 +22,9 @@
             <td><%= location.postal_code %> <%= location.city %></td>
             <td><%= location.country %></td>
             <td><%= location.phone %></td>
-            <td><%= link_to 'Liste client', location_customers_path(location.id), :class => "btn btn-warning" %></td>
-            <td><%= link_to 'Modifier', edit_location_path(location), :class => "btn btn-info" %></td>
-            <td><%= link_to 'Supprimer', location, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-danger" %></td>
+            <td><%= link_to 'Liste client', location_customers_path(location.id), :class => "btn btn-outline-secondary" %></td>
+            <td><%= link_to 'Modifier', edit_location_path(location), :class => "btn btn-outline-info" %></td>
+            <td><%= link_to 'Supprimer', location, method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-outline-danger" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -32,6 +32,6 @@
   </div>
     <br>
     <div class="container text-center">
-    <%= link_to 'Nouvel établissement',  new_location_path, :class => "btn btn-primary"%>
+    <%= link_to 'Nouvel établissement',  new_location_path, :class => "btn btn-outline-primary"%>
   </div>
 </div>
