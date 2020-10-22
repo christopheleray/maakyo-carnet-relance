@@ -5,7 +5,7 @@
         <h5><%= form.label :Prénom %> *</h5>
         <p><%= form.text_area :first_name, placeholder: "Votre prènom" %></p>
       </div>
-        <div class="field form-group">
+      <div class="field form-group">
         <h5><%= form.label :Nom %> *</h5>
         <p><%= form.text_area :last_name, placeholder: "Votre nom" %></p>
       </div>
@@ -14,8 +14,11 @@
         <p><%= form.text_area :phone, placeholder: "0677777775" %></p>
         <span class="text-conditions-generales">Le numéro de téléphone doit contenir 10 chiffres</span>
       </div>
+      <div class="field form-group">
+        <p><%= form.hidden_field :table  %></p>
+      </div>
       <div class="actions">
-        <%= form.submit "Enregistrer", class: "btn btn-primary" %>
+        <%= form.submit "Enregistrer", class: "btn btn-outline-primary" %>
       </div>
     </div>
 <% end %>
