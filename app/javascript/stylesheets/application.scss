@@ -39,4 +39,8 @@
 
 .navbar {
     width: 100%
+    a {
+        display: flex;
+        justify-content: space-around;
+    }
 }
