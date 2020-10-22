@@ -11,7 +11,7 @@ class CustomersController < ApplicationController
     def show; end
 
     def new
-        @customer = @location.customers.build
+        @customer = @location.customers.build(table: params[:table])
     end
 
     def edit; end
@@ -21,7 +21,7 @@ class CustomersController < ApplicationController
         if @customer.save
             redirect_to static_pages_thankyou_path, notice: 'Client a été créé avec succés'
         else
-            flash.now[:alert] = "Merci de vérifier votre saisie, les champs sont obligatoires"
+            flash.now[:alert] = "Merci de vérifier votre saisie, les champs sont obligatoires. Le numéro de téléphone doit contenir 10 chiffres."
             render :new
         end
     end
@@ -50,7 +50,7 @@ class CustomersController < ApplicationController
     end
 
     def customers_params
-        params.require(:customer).permit(:first_name, :last_name, :phone, :location_id)
+        params.require(:customer).permit(:first_name, :last_name, :phone, :location_id, :table)
     end
 
 

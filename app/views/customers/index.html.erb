@@ -3,15 +3,16 @@
 <div class="container main-container">    
     <h1 class="display-6 py-2 text-center">Liste cahier de rappel - COVID19</h1>
     <div class="container">
-      <table class="table table-striped table-bordered table-reponsive">
+      <table class="table table-sm table-light table-bordered table-reponsive table-hover">
         <thead class="thead-dark">
           <tr>
             <th scope="col">Etablissement</th>
             <th scope="col">Prénom</th>
             <th scope="col">Nom</th>
             <th scope="col">Téléphone</th>
+            <th scope="col">Table</th>
             <th scope="col">Date</th>
-            <th colspan="3"></th>
+            <th colspan="1"></th>
           </tr>
         </thead>
 
@@ -22,15 +23,15 @@
               <td scope="row"><%= customer.first_name%></td>
               <td scope="row"><%= customer.last_name%></td>
               <td scope="row"><%= customer.phone%></td>
+              <td scope="row"><%= customer.table%></td>
               <td scope="row"><%= customer.created_at%></td>
-              <td scope="row"><%= link_to 'Modifier', edit_location_customer_path(@location, customer), :class => "btn btn-info" %></td>
-              <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-danger" %></td>
+              <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-outline-danger" %></td>
             </tr>
           <% end %>
         </tbody>
       </table>
     </div>
   <div class="container text-center">
-    <%= link_to 'Nouveau client', new_location_customer_path(@location), :class => "btn btn-primary" %>
+    <%= link_to 'Nouveau client', new_location_customer_path(@location), :class => "btn btn-outline-primary" %>
   </div>
 </div>
