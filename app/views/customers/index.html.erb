@@ -22,7 +22,7 @@
               <td scope="row"><%= customer.last_name%></td>
               <td scope="row"><%= customer.phone%></td>
               <td scope="row"><%= customer.table%></td>
-              <td scope="row"><%= customer.created_at%></td>
+              <td scope="row"><%= customer.created_at.in_time_zone("Paris") %></td>
               <td scope="row"><%= link_to 'Supprimer', [@location, customer], method: :delete, data: { confirm: 'Êtes vous sûr ?' }, :class => "btn btn-outline-danger" %></td>
             </tr>
           <% end %>

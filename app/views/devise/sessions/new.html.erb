@@ -2,14 +2,18 @@
   <h2>Connectez vous à votre compte</h2>
 
   <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-    <div class="field">
+  <div class="row">
+    <div class="form-group col-md-4">
       <%= f.label :email , "Email" %><br />
       <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
+    </div>
 
-    <div class="field">
+  <div class="row">
+    <div class="form-group col-md-4">
       <%= f.label :password , "Mot de passe"%><br />
       <%= f.password_field :password, autocomplete: "current-password" %>
+    </div>
     </div>
 
     <% if devise_mapping.rememberable? %>
@@ -19,10 +23,11 @@
       </div>
     <% end %>
 
-    <div class="actions">
-      <%= f.submit "Me connecter" %>
+    <div class="container actions">
+      <%= f.submit "Me connecter", class: "btn btn-outline-primary" %>
     </div>
   <% end %>
-
+ <div class="container">
   <%= render "devise/shared/links" %>
+  </div>
 </div>
